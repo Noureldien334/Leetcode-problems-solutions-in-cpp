@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int findGCD(vector<int>& nums) {
+        int div;
+        int max,min;
+        max=*max_element(nums.begin(),nums.end());
+        min=*min_element(nums.begin(),nums.end());
+        if(max%min==0)
+            return min;
+        else
+        {
+            
+            for(int i=1;i<min;i++)
+            {
+                if(min%i==0 && max%i==0)
+                    div=i;
+            }
+        }
+        return div;
+    }
+};
