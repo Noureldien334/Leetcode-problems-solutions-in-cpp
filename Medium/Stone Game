@@ -1,0 +1,39 @@
+class Solution {
+public:
+    bool stoneGame(vector<int>& piles) {
+        int alice=0,bob=0,j;
+        bool al=true,bo=false;
+        for(int i=0,j=piles.size()-1;i<j;)
+        {
+            
+            if(al==true)
+            {if(piles[i]>=piles[j])
+                {alice+=piles[i];
+                 i++;}
+             else
+             {
+                 alice+=piles[j];
+                 j--;
+             }
+             al=false;
+             bo=true;
+            }
+            if(bo==true)
+            {if(piles[i]>=piles[j])
+                {bob+=piles[i];
+                 i++;}
+             else
+             {
+                 bob+=piles[j];
+                 j--;
+             }
+             al=true;
+             bob=false;
+            }
+        }
+             
+                 
+        return alice>bob;
+        }
+    
+};
