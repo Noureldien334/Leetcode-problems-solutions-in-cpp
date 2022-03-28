@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int countEven(int num) {
+        int sum=0,s=0,ss=0;
+        bool flag=true;
+        for(int i=2; i<=num;i++)
+        {
+            s=i;
+              while(s!=0)
+              {
+                sum+=s%10;
+                  s/=10;
+              }
+            
+            if(sum%2==0)
+            ss+=1;
+            
+            sum=0;
+        }
+        return ss;
+    }
+};
