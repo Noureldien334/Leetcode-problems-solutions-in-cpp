@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int mostWordsFound(vector<string>& sentences) {
+        string x;
+        int s=1,ss=-1;
+        for(auto i=sentences.begin();i!=sentences.end();i++)
+        {
+            x=*i;
+            for(int j=0;j<x.size();j++)
+            {
+               if(x[j]==32)
+                   s+=1;
+            }
+            if(s>ss)
+                ss=s;
+            s=1;
+            
+        }
+        return ss;
+    }
+};
